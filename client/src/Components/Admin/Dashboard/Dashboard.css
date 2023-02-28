@@ -1,0 +1,10 @@
+#dashboard{
+    position: absolute;
+    width: 82%;
+    right: 0;
+    top: 0;
+    background-color: #0B2744;
+    padding: 5%;
+    font-family: "Poppins";
+    height: 100%;
+}
