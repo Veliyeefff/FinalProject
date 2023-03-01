@@ -66,7 +66,9 @@ function LoginSignup() {
                                             }
                                             setTimeout(()=>{
                                                 navigate("/")
+                                                window.location.reload()
                                             },1300)
+
                                         })
 
                                     }

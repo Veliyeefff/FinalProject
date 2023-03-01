@@ -26,23 +26,6 @@ const GetUserById = async(req,res,next)=>{
     })
 }
 
-// const addToWishList = async(req, res, next)=> {
-//     const {id} = req.body.userId
-//     User.findById(id,(err,doc)=>{
-//         if(!err){
-//             if(doc){
-//                 res.status(200)
-//                 doc.wishlist.push(req.body.prodId)
-//                 res.send(doc)
-//             }else{
-//                 res.status(404).json({message:"Not Found!!!"})
-//             }
-//         }else{
-//             res.status(500).json({message:err})
-//         }
-//     })
-// }
-
 const PostUser = async(req,res,next)=>{
     try {
         const user = new User({

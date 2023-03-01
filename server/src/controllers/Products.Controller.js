@@ -26,7 +26,7 @@ const GetProductById = async(req,res)=>{
     })
 }
 
-const PostProduct = async(req,res)=>{
+const PostProduct = async(req,res,next)=>{
     try {
         const Product = new Products({
             img:req.body.img,
@@ -46,7 +46,7 @@ const PostProduct = async(req,res)=>{
         Product.save()
         res.status(200).json({message:"Create"})
     } catch (error) {
-        console.log("ERROR",err);
+        next(err);
     }
 }
 

@@ -60,17 +60,6 @@
     right: 4%;
     transition: .7s;
     visibility: hidden;
-    /* background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); */
-    /* background-image: linear-gradient(to right, #06172f, #2d214b, #602159, #921b54, #ba253e); */
-    /* background-image: linear-gradient(to right bottom, #000000, #2e2e2e, #585858, #878787, #b9b9b9, #c9c2d2, #decae9, #f8d1fc, #ffa6e0, #ff75ad, #ff3d66, #ff0000); */
-    /* background-image: linear-gradient(to right top, #000000, #3a161f, #722030, #ad2b3a, #e83b3b); */
-    /* background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%); */
-    /* background-image: linear-gradient(to right top, #000000, #3a161f, #722030, #ad2b3a, #e83b3b); */
-    /* background-image: linear-gradient(to top, #464141, #6d403f, #903b3a, #b13231, #d02222); */
-    /* background: rgb(16,46,194);
-background: linear-gradient(94deg, rgba(16,46,194,1) 0%, rgba(37,20,24,1) 96%); */
-/* background-image: linear-gradient(to right top, #0404ca, #850099, #a2006b, #a70047, #9e0c2f); */
-/* background-image: linear-gradient(to right top, #2100ff, #c700c3, #fb0081, #ff0045, #ff0000); */
 background: rgb(16,194,162);
 background: linear-gradient(94deg, rgba(16,194,162,1) 0%, rgba(212,69,103,1) 96%);
 
@@ -193,14 +182,20 @@ background: linear-gradient(94deg, rgba(16,194,162,1) 0%, rgba(212,69,103,1) 96%
     z-index: 111111;
     transition: .4s;
     left: -50%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
 }
 #toggle-navbar .toggle-navbar-links{
     display: flex;
     align-items: flex-start;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
+    padding: 0% 0% 5% 0%;
 }
-#toggle-navbar .toggle-navbar-links a{
+#toggle-navbar .toggle-navbar-links a,.toggle-log{
     color: white;
     z-index: 1;
     text-decoration: none;
@@ -211,8 +206,12 @@ background: linear-gradient(94deg, rgba(16,194,162,1) 0%, rgba(212,69,103,1) 96%
     border-bottom:1px solid rgb(43, 43, 43) ;
     width: 100%;
     transition: .3s;
+    cursor: pointer;
 }
 #toggle-navbar .toggle-navbar-links a:hover{
+    background-color: black;
+}
+#toggle-navbar .toggle-navbar-links p:hover{
     background-color: black;
 }
 .toggle-account{

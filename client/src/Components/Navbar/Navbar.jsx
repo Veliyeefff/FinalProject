@@ -92,11 +92,19 @@ function Navbar() {
                     <Link to='contact'>CONTACT</Link>
                     <Link to='about'>ABOUT</Link>
                 </div>
+                <div className='toggle-navbar-links'>
+                    {
+                        user?
+                        <p onClick={logout} className='toggle-log'>LOGOUT</p>
+                        :  
+                        <p onClick={() => { navigate('/login') }} className='toggle-log'>LOGIN</p>
+                        }
+                </div>
             </div>
 
             <div className="toggle-account">
                 <span><BsPerson onClick={() => { user ? navigate("/profile") : navigate("/login") }} /></span>
-                <span onClick={() => { navigate('/wishlist') }}><CiHeart /><sup>{favs.length}</sup></span>
+                <span onClick={() => { navigate('/wishlist') }}><CiHeart /><sup>{user ? user.userWishList.length : 0}</sup></span>
                 <span onClick={() => { navigate('/cart') }}><BsCart3 /><sup>{user ? basket_count : 0}</sup></span>
             </div>
         </>

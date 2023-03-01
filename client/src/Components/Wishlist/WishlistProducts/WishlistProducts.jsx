@@ -14,7 +14,7 @@ function WishlistProducts() {
     const navigate = useNavigate()
     let user = JSON.parse(localStorage.getItem("user"));
     useEffect(()=>{
-        setFavs(user.userWishList)
+        setFavs(user?.userWishList)
     },[])
     const removeFav = async (id) =>{
         setFavs([...favs].filter(x=>x._id!==id))
@@ -57,7 +57,7 @@ function WishlistProducts() {
             theme="dark"/>
         <div className="wislist-products-list">
         {
-            user && favs.length!==0?
+             user && favs.length!==0?
             <div className='products-list-elements'>
             {
             favs.map(element=>(

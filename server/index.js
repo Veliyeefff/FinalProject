@@ -26,9 +26,11 @@ app.use('/users',UserRouter)
 //Server
 const port = process.env.PORT
 app.listen(port,(err)=>{
-    if(!err){
-        console.log("Server loading...");
-    }else{
-        console.log(err);
+    try {
+        if(!err){
+            console.log("Server loading...");
+        }
+    } catch (error) {
+        throw(error)
     }
 })
