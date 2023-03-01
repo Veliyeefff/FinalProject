@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import {Formik,Form,Field} from 'formik'
+import { message } from 'antd'
 import "./UpdateProduct.css"
 // import * as Yup from 'yup'
 function UpdateProduct() {
@@ -97,7 +98,14 @@ function UpdateProduct() {
                   axios.put(`http://localhost:4000/products/${updateId}`,UpdateProduct)
                     .then(res=>{
                       if(res.status===200){
-                        alert("success")
+                        message.open({
+                            type:"success",
+                            content:`Updated`,
+                            style:{
+                                color:"black"
+                            }
+
+                        })
                         navigate("/admin/products")
                       }
                     })

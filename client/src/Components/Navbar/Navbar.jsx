@@ -18,7 +18,7 @@ function Navbar() {
     const [navvisible, setNavvisible] = useState(null)
     const [icon, setIcon] = useState(false)
     const navigate = useNavigate()
-    const basket_count = useSelector(state => state.basket.count)
+    const basket_count = useSelector(state => state.basket.count) 
     let user = JSON.parse(localStorage.getItem("user"))
     const handleWindow = () => {
         window.scrollTo({ top: 0, behavior: "smooth" })
@@ -60,7 +60,7 @@ function Navbar() {
                         <span className='person'>
                         <BsPerson onClick={() => { user ? navigate("/profile") : navigate("/login") }} />
                         <div className='hover-profile'>
-                            <img className='hover-profile-image' src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp" alt="" />
+                            <img className='hover-profile-image' src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp" alt="" onClick={()=>{navigate("/profile")}} />
                             <div className="hover-profile-username-email">
                                 <h4 className='hover-useremail'>Username:{user.username}</h4>
                                 <h4 className='hover-useremail'>Email:{user.email}</h4>

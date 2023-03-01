@@ -60,7 +60,20 @@
     right: 4%;
     transition: .7s;
     visibility: hidden;
-    background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+    /* background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%); */
+    /* background-image: linear-gradient(to right, #06172f, #2d214b, #602159, #921b54, #ba253e); */
+    /* background-image: linear-gradient(to right bottom, #000000, #2e2e2e, #585858, #878787, #b9b9b9, #c9c2d2, #decae9, #f8d1fc, #ffa6e0, #ff75ad, #ff3d66, #ff0000); */
+    /* background-image: linear-gradient(to right top, #000000, #3a161f, #722030, #ad2b3a, #e83b3b); */
+    /* background-image: linear-gradient(to top, #f77062 0%, #fe5196 100%); */
+    /* background-image: linear-gradient(to right top, #000000, #3a161f, #722030, #ad2b3a, #e83b3b); */
+    /* background-image: linear-gradient(to top, #464141, #6d403f, #903b3a, #b13231, #d02222); */
+    /* background: rgb(16,46,194);
+background: linear-gradient(94deg, rgba(16,46,194,1) 0%, rgba(37,20,24,1) 96%); */
+/* background-image: linear-gradient(to right top, #0404ca, #850099, #a2006b, #a70047, #9e0c2f); */
+/* background-image: linear-gradient(to right top, #2100ff, #c700c3, #fb0081, #ff0045, #ff0000); */
+background: rgb(16,194,162);
+background: linear-gradient(94deg, rgba(16,194,162,1) 0%, rgba(212,69,103,1) 96%);
+
 }
 
 #navbar .navbar-icons .person .hover-profile .hover-profile-username-email{

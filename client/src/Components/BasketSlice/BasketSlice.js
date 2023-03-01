@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
 import Swal from "sweetalert2";
+import { message } from "antd";
 let user = JSON.parse(localStorage.getItem("user"))
 let total_count=0
 user?
@@ -107,7 +108,6 @@ const basketSlice = createSlice({
             state.value.forEach(elem=>{
                 if(elem._id===actions.payload._id){
                     if(elem.counter===1){
-
                     }else{
                         elem.counter-=1
                         state.count-=1

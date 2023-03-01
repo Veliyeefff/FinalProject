@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsCartX } from 'react-icons/bs'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { deleteBasket,increase,decrease} from '../../BasketSlice/BasketSlice';
 import './CartProducts.css'
@@ -8,13 +8,13 @@ function CartProducts() {
     let user = JSON.parse(localStorage.getItem("user"))
     const navigate = useNavigate()
     const dispatch = useDispatch()
+    const basket_table = useSelector(state=>state.basket.value)
     const handleDelete=(data)=>{
         dispatch(deleteBasket(data))
     }
     const handleIncrease=(data)=>{
         dispatch(increase(data))
     }
-
     const handleDecrease=(data)=>{
         dispatch(decrease(data))
 
@@ -28,11 +28,11 @@ function CartProducts() {
         <div id='cartproducts'>
             <div className="cartproducts-list">
                 {
-                    user&& user.userCheckout.length !== 0 ?
+                    user && user?.userCheckout?.length !== 0 ?
                         <div className='checkout-list'>
                             <div className='checkout-list-elements'>
                                 {
-                                    user.userCheckout.map(element => (
+                                    user?.userCheckout?.map(element => (
                                         <div key={element._id} className="checkout-element-products">
                                             <div className='img-texts'>
                                                 <div className="checkout-element-image">

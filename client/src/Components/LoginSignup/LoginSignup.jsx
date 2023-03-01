@@ -72,7 +72,14 @@ function LoginSignup() {
                                     }
                                 })
                                 .catch(error => {
-                                    alert(error)
+                                    message.open({
+                                        type:"error",
+                                        content:`Email or password wrong`,
+                                        style:{
+                                            color:"black"
+                                        }
+
+                                    })
                                 })
                         }}
                     >

@@ -7,7 +7,7 @@ function CartHeader() {
   return (
     <div id='cartheader'>
         <h4 className='cart-header-h4'>
-                WISHLIST
+                CART
             </h4>
             <p className='cart-header-p'><span onClick={() => { navigate('/') }} className='nav-home'>Home</span> <span>{'>'}</span> <span>Cart</span></p>
     </div>
