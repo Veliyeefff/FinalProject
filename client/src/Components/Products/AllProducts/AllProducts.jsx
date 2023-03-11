@@ -49,7 +49,6 @@ function AllProducts() {
     useEffect(()=>{
         if (filterprice==0){
             setProducts([...sortproducts],sortproducts)
-            console.log(products);
         }
         else if(filterprice==1){
             setProducts([...products].sort((a,b)=>a.price - b.price))
@@ -67,7 +66,6 @@ function AllProducts() {
             (color ? x.color === color : x)
 
         )))
-        console.log(filterprice)
     }, [products, minn, maxx, category, size, color])
     
 

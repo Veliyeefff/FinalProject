@@ -81,7 +81,6 @@ function AddNewProduct() {
 
                                 })
                             })
-                        console.log(newProduct);
                     }}
                 >
 

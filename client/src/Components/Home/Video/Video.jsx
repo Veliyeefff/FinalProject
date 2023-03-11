@@ -1,6 +1,7 @@
 import React from 'react'
 import { HiOutlineX } from 'react-icons/hi'
 import disableScroll from 'disable-scroll';
+import YoutubeVideo from '../../../Assets/Video.mp4'
 import './Video.css'
 import '../SummerCollection/Summer.css'
 function Video({ videoo, setVideo }) {
@@ -12,7 +13,9 @@ function Video({ videoo, setVideo }) {
     <div id='videoo' className={videoo}>
       <div className="video-player">
         <HiOutlineX onClick={handleClick} />
-        <iframe width="1000" height="600" src="https://www.youtube.com/embed/rKZT4_aaOOY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+        <video width="1000" height="600"  controls>
+          <source src={YoutubeVideo} type="video/mp4" />
+        </video>
       </div>
     </div>
   )

@@ -12,6 +12,7 @@ function Carousel() {
   return (
     <div className='carou'>
         <Swiper
+        draggable={true}
         autoplay={{
             delay: 2500,
             disableOnInteraction: false,

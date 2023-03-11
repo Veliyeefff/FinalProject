@@ -1,6 +1,4 @@
 const User = require('../models/Users.Models')
-const bcrypt = require("bcryptjs")
-const jwt = require("jsonwebtoken")
 const AsyncErrorHandler = require("express-async-handler")
 const {sendJwtToClient} = require("../Helpers/auth/token.helpers")
 const { validateInput } = require('../Helpers/auth/input.helpers')
@@ -39,7 +37,7 @@ const login = AsyncErrorHandler(async(req,res,next) => {
         }))
     }
     const user = await User.findOne({email}).select('+password');
-    if(password !==user.password){
+    if(password !==user?.password){
         return next(res.status(400).json({
             success:false,
             message:"Wrong password"

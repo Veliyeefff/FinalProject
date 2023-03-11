@@ -30,9 +30,9 @@ function WishlistProducts() {
         }
         axios.put(`http://localhost:4000/users/${user._id}`,newuser)
         localStorage.setItem("user", JSON.stringify(newuser))
-        toast.success('This product delete', {
+        toast.success('This product remove from wihslist', {
             position: "top-right",
-            autoClose: 3000,
+            autoClose: 1000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
@@ -61,7 +61,7 @@ function WishlistProducts() {
             <div className='products-list-elements'>
             {
             favs.map(element=>(
-                    <div className="list-element-products">
+                    <div key={element._id} className="list-element-products">
                         <div className='img-texts'>
                             <div className="list-element-image">
                                 <img src={element.img} alt="" />

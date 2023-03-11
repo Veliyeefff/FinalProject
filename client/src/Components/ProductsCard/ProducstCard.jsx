@@ -17,12 +17,12 @@ function ProducstCard({ element }) {
     useEffect(() => {
         setFavs(user ? user.userWishList : [])
     }, [])
-    const handleFav = (data) => {
+    const handleFav = async(data) => {
         if (user) {
             if (favs.some(x => x._id === data._id)) {
                 toast.error('This product has been already in wishlist', {
                     position: "top-right",
-                    autoClose: 3000,
+                    autoClose: 1000,
                       hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
@@ -42,19 +42,18 @@ function ProducstCard({ element }) {
                     userWishList: [...favs, data]
                 }
                 setFavs(newuser.userWishList)
-                console.log(favs);
                 localStorage.setItem("user", JSON.stringify(newuser))
-                axios.put(`http://localhost:4000/users/${user._id}`, newuser)
-                    toast.success('This product add to wishlist', {
-                        position: "top-right",
-                        autoClose: 3000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "dark",
-                    });
+                await axios.put(`http://localhost:4000/users/${user._id}`, newuser)
+                toast.success('This product add to wishlist', {
+                    position: "top-right",
+                    autoClose: 1000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                });
             }
         } else {
             navigate("/login")

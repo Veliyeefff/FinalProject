@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import './DetailsProduct.css'
 import { BiHeart } from 'react-icons/bi'
 import { BsEmojiFrown } from 'react-icons/bs'
-import {toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
 import { addBasket } from '../../BasketSlice/BasketSlice'
@@ -16,19 +16,18 @@ function DetailsProduct() {
     const { favs, setFavs } = useProvider()
     const dispatch = useDispatch()
     const navigate = useNavigate()
-    useEffect(()=>{
-        setFavs(user ? user.userWishList:[])
-    },[])
-    const handleAddBasket=(data)=>{
+    useEffect(() => {
+        setFavs(user ? user.userWishList : [])
+    }, [])
+    const handleAddBasket = (data) => {
         dispatch(addBasket(data))
     }
-
     const handleFav = (data) => {
-        if(user){
+        if (user) {
             if (favs.some(x => x._id === data._id)) {
                 toast.error('This product has been already in wishlist', {
                     position: "top-right",
-                    autoClose: 3000,
+                    autoClose: 1000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
@@ -37,23 +36,22 @@ function DetailsProduct() {
                     theme: "dark",
                 });
             } else {
-                let newuser = {
+                let newuserr = {
                     _id: user._id,
                     username: user.username,
                     isAdmin: user.isAdmin,
                     password: user.password,
-                    email:user.email,
+                    email: user.email,
                     userCard: user.userCard,
                     userCheckout: user.userCheckout,
-                    userWishList: [...favs,data]
+                    userWishList: [...favs, data]
                 }
-                setFavs(newuser.userWishList)
-                console.log(data);
-                localStorage.setItem("user", JSON.stringify(newuser))
-                axios.put(`http://localhost:4000/users/${user._id}`,newuser)
+                setFavs(newuserr.userWishList)
+                localStorage.setItem("user", JSON.stringify(newuserr))
+                axios.put(`http://localhost:4000/users/${user._id}`, newuserr)
                 toast.success('This product add to wishlist', {
                     position: "top-right",
-                    autoClose: 3000,
+                    autoClose: 1000,
                     hideProgressBar: false,
                     closeOnClick: true,
                     pauseOnHover: true,
@@ -62,7 +60,7 @@ function DetailsProduct() {
                     theme: "dark",
                 });
             }
-        }else{
+        } else {
             navigate("/login")
         }
     }
@@ -86,7 +84,7 @@ function DetailsProduct() {
                         {
                             productDetails.isStock ?
                                 <>
-                                    <button className='addcart' onClick={()=>{ user? handleAddBasket(productDetails):navigate("/login")}}>ADD TO CART</button>
+                                    <button className='addcart' onClick={() => { user ? handleAddBasket(productDetails) : navigate("/login") }}>ADD TO CART</button>
                                 </> :
                                 <div className='outofstock'>
                                     <BsEmojiFrown />

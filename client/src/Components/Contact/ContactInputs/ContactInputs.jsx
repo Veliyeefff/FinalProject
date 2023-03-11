@@ -63,7 +63,6 @@ function ContactInputs() {
                             }}
                             validationSchema={ContactSchema}
                             onSubmit={(values,{resetForm}) => {
-                                console.log(values);
                                 resetForm()
                             }
                             } 

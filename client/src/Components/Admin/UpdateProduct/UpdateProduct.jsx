@@ -109,7 +109,7 @@ function UpdateProduct() {
                         navigate("/admin/products")
                       }
                     })
-                  console.log(UpdateProduct);
+
                 }}
                 >
                     {({ errors }) => (

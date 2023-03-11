@@ -1,6 +1,6 @@
 import React from 'react'
 import './Story.css'
-import {CiDeliveryTruck} from 'react-icons/ci'
+import {HiOutlineTruck} from 'react-icons/hi'
 import {MdOutlinePayments} from 'react-icons/md'
 import {MdSupportAgent} from 'react-icons/md'
 function Story() {
@@ -25,7 +25,7 @@ function Story() {
             </div>
             <div className="story-section-text2">
                 <div className="story-section-text2-delivery">
-                    <CiDeliveryTruck/>
+                    <HiOutlineTruck/>
                     <div className="delievery-text">
                         <h3 className="delievery-h3">FREE DELIVERY</h3>
                         <p className="delievery-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

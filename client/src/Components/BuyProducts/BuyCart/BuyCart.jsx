@@ -9,7 +9,6 @@ import { empty} from '../../BasketSlice/BasketSlice';
 import Swal from 'sweetalert2';
 function BuyCart() {
     const dispatch = useDispatch()
-
     const navigate = useNavigate()
     const nameregex = /^[A-Za-z" "]+$/
     const cardnumberregex = /^(?:\d[ -]*?){16}$/
@@ -64,7 +63,7 @@ function BuyCart() {
 
                         }}
                         validationSchema={BuySchame}
-                        onSubmit={(values, { resetForm }) => {
+                        onSubmit={(values,{ resetForm }) => {
                             Swal.fire({
                                 title: 'Are you sure?',
                                 text: "You won't be able to revert this!",
@@ -85,16 +84,16 @@ function BuyCart() {
                                         userCheckout: [],
                                         userWishList: user.userWishList
                                     }
+                                    axios.put(`http://localhost:4000/users/${user._id}`, newuser)
                                     localStorage.setItem("user", JSON.stringify(newuser))
                                     dispatch(empty())
-                                    axios.put(`http://localhost:4000/users/${user._id}`, newuser)
                                     resetForm()
                                   navigate("/")
                                 }
                               })
                         }}
                     >
-                        {({ values, errors }) => (
+                        {({errors }) => (
                             <Form>
                                 <Field onKeyUp={(e) => setName(e.target.value)} className={borderclass2} name="name" placeholder="NAME" />
                                 {errors.name ? (setBorderclass2("borderred")) : (setBorderclass2(null))}
@@ -104,12 +103,9 @@ function BuyCart() {
                                 {errors.date ? setBorderclass4("borderred") : setBorderclass4(null)}
                                 <Field className={borderclass5} type="password" name="cvv" placeholder='CVV' />
                                 {errors.cvv ? setBorderclass5("borderred") : setBorderclass5(null)}
-
-
                                 <button type='submit'>BUY</button>
                             </Form>
                         )}
-
                     </Formik>
                 </div>
             </div>
